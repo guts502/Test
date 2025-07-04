@@ -2,44 +2,83 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
+  <title>فروشگاه دیجی‌کالا</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>فروشگاه آنلاین</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
-    header { background-color: #d41c1c; color: white; padding: 20px; text-align: center; }
-    nav { background-color: #fff; display: flex; justify-content: center; gap: 20px; padding: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    nav a { text-decoration: none; color: #333; font-weight: bold; }
-    .products { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
-    .product { background: white; border-radius: 8px; width: 200px; margin: 10px; padding: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    footer { background-color: #333; color: white; text-align: center; padding: 10px; margin-top: 20px; }
+    body { font-family: 'Tahoma', sans-serif; background-color: #f5f5f5; }
+    .navbar { background-color: #d41c1c; }
+    .navbar-brand, .nav-link { color: white !important; }
+    .carousel-item img { height: 300px; object-fit: cover; }
+    .product-card { background: white; border-radius: 8px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    footer { background-color: #333; color: white; padding: 20px; text-align: center; margin-top: 40px; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>فروشگاه آنلاین مرتضی</h1>
-  </header>
-  <nav>
-    <a href="#">خانه</a>
-    <a href="#">دسته‌بندی‌ها</a>
-    <a href="#">پرفروش‌ترین‌ها</a>
-    <a href="#">ارتباط با ما</a>
-  </nav>
-  <section class="products">
-    <div class="product">
-      <h3>گوشی موبایل</h3>
-      <p>قیمت: ۵٬۵۰۰٬۰۰۰ تومان</p>
+
+<!-- Header -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="#">دیجی‌کالا</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">خانه</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">محصولات</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">تماس با ما</a></li>
+      </ul>
     </div>
-    <div class="product">
-      <h3>هدفون بی‌سیم</h3>
-      <p>قیمت: ۱٬۲۹۰٬۰۰۰ تومان</p>
+  </div>
+</nav>
+
+<!-- Slider -->
+<div id="mainSlider" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://via.placeholder.com/1200x300?text=پیشنهاد+ویژه" class="d-block w-100" alt="بنر">
     </div>
-    <div class="product">
-      <h3>تلویزیون هوشمند</h3>
-      <p>قیمت: ۱۵٬۹۰۰٬۰۰۰ تومان</p>
+    <div class="carousel-item">
+      <img src="https://via.placeholder.com/1200x300?text=تخفیف+تابستانی" class="d-block w-100" alt="بنر">
     </div>
-  </section>
-  <footer>
-    <p>© ۲۰۲۵ فروشگاه مرتضی | همه حقوق محفوظ است</p>
-  </footer>
+  </div>
+</div>
+
+<!-- Products -->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="product-card">
+        <h5>گوشی موبایل سامسونگ</h5>
+        <p>قیمت: ۸٬۹۰۰٬۰۰۰ تومان</p>
+        <button class="btn btn-danger">افزودن به سبد</button>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="product-card">
+        <h5>هدفون بی‌سیم</h5>
+        <p>قیمت: ۱٬۵۰۰٬۰۰۰ تومان</p>
+        <button class="btn btn-danger">افزودن به سبد</button>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="product-card">
+        <h5>تلویزیون هوشمند</h5>
+        <p>قیمت: ۲۳٬۰۰۰٬۰۰۰ تومان</p>
+        <button class="btn btn-danger">افزودن به سبد</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>© ۲۰۲۵ دیجی‌کالا | طراحی شده توسط مرتضی</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
