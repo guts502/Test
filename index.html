@@ -1,84 +1,830 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>فروشگاه دیجی‌کالا</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
-  <style>
-    body { font-family: 'Tahoma', sans-serif; background-color: #f5f5f5; }
-    .navbar { background-color: #d41c1c; }
-    .navbar-brand, .nav-link { color: white !important; }
-    .carousel-item img { height: 300px; object-fit: cover; }
-    .product-card { background: white; border-radius: 8px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    footer { background-color: #333; color: white; padding: 20px; text-align: center; margin-top: 40px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه خدمات اینترنتی | VPN, WireGuard, DNS, VIP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tahoma&display=swap');
+        
+        body {
+            font-family: 'Tahoma', sans-serif;
+            background-color: #f5f7fa;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+        
+        .nav-link:hover {
+            color: #4f46e5;
+        }
+        
+        .animated-bg {
+            animation: gradient 15s ease infinite;
+            background-size: 400% 400%;
+        }
+        
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-indigo-600 text-xl"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold">سرویس‌های حرفه‌ای</h1>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8 space-x-reverse">
+                    <a href="#home" class="nav-link text-white hover:text-indigo-200 transition">خانه</a>
+                    <a href="#services" class="nav-link text-white hover:text-indigo-200 transition">خدمات</a>
+                    <a href="#pricing" class="nav-link text-white hover:text-indigo-200 transition">تعرفه‌ها</a>
+                    <a href="#features" class="nav-link text-white hover:text-indigo-200 transition">ویژگی‌ها</a>
+                    <a href="#contact" class="nav-link text-white hover:text-indigo-200 transition">تماس با ما</a>
+                </nav>
+                
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <button class="bg-white text-indigo-600 px-4 py-2 rounded-lg font-medium hover:bg-indigo-50 transition">
+                        ورود / ثبت‌نام
+                    </button>
+                    <button class="md:hidden text-white">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<!-- Header -->
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <a class="navbar-brand" href="#">دیجی‌کالا</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#">خانه</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">محصولات</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">تماس با ما</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white py-20 animated-bg">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">دسترسی آزاد و امن به اینترنت با بهترین سرویس‌ها</h1>
+                    <p class="text-xl mb-8 text-indigo-100">وی پی ان، وایرگارد، دی‌ان‌اس و کانال VIP با بالاترین کیفیت و سرعت</p>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <button class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-bold hover:bg-indigo-50 transition">
+                            خرید سرویس
+                        </button>
+                        <button class="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-indigo-600 transition">
+                            راهنمای استفاده
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2982/2982035.png" alt="VPN Illustration" class="w-full max-w-md">
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Slider -->
-<div id="mainSlider" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://via.placeholder.com/1200x300?text=پیشنهاد+ویژه" class="d-block w-100" alt="بنر">
-    </div>
-    <div class="carousel-item">
-      <img src="https://via.placeholder.com/1200x300?text=تخفیف+تابستانی" class="d-block w-100" alt="بنر">
-    </div>
-  </div>
-</div>
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">خدمات ما</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">سرویس‌های با کیفیت و پرسرعت برای دسترسی آزاد و امن به اینترنت</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- VPN Service -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden p-6 border border-gray-100">
+                    <div class="feature-icon bg-indigo-100 text-indigo-600 mx-auto">
+                        <i class="fas fa-user-shield text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-800 mb-3">وی پی ان اختصاصی</h3>
+                    <p class="text-gray-600 text-center mb-4">سرویس VPN پرسرعت با اتصال پایدار و سرورهای متعدد در کشورهای مختلف</p>
+                    <ul class="space-y-2 mb-6 text-gray-700">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 ml-2"></i>
+                            <span>سرعت بالا و بدون محدودیت</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 ml-2"></i>
+                            <span>پشتیبانی از تمام دستگاه‌ها</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 ml-2"></i>
+                            <span>امنیت و حریم خصوصی</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">
+                        مشاهده طرح‌ها
+                    </button>
+                </div>
+                
+                <!-- WireGuard Service -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden p-6 border border-gray-100">
+                    <div class="feature-icon bg-blue-100 text-blue-600 mx-auto">
+                        <i class="fas fa-bolt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-800 mb-3">وایرگارد</h3>
+                    <p class="text-gray-600 text-center mb-4">سرویس WireGuard با جدیدترین پروتکل و بالاترین سطح امنیت و سرعت</p>
+                    <ul class="space-y-2 mb-6 text-gray-700">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 ml-2"></i>
+                            <span>سرعت فوق‌العاده</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 ml-2"></i>
+                            <span>مصرف باتری کمتر</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 ml-2"></i>
+                            <span>پایداری بالا</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                        مشاهده طرح‌ها
+                    </button>
+                </div>
+                
+                <!-- DNS Service -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden p-6 border border-gray-100">
+                    <div class="feature-icon bg-purple-100 text-purple-600 mx-auto">
+                        <i class="fas fa-globe text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-800 mb-3">دی‌ان‌اس اختصاصی</h3>
+                    <p class="text-gray-600 text-center mb-4">سرویس DNS پرسرعت برای دسترسی آزاد بدون نیاز به نرم‌افزار</p>
+                    <ul class="space-y-2 mb-6 text-gray-700">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 ml-2"></i>
+                            <span>راه‌اندازی آسان</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 ml-2"></i>
+                            <span>بدون افت سرعت</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 ml-2"></i>
+                            <span>فیلترشکن همیشگی</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition">
+                        مشاهده طرح‌ها
+                    </button>
+                </div>
+                
+                <!-- VIP Channel -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden p-6 border border-gray-100">
+                    <div class="feature-icon bg-red-100 text-red-600 mx-auto">
+                        <i class="fas fa-crown text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-800 mb-3">کانال VIP</h3>
+                    <p class="text-gray-600 text-center mb-4">اشتراک کانال‌های VIP خارجی با کیفیت بالا و بدون محدودیت</p>
+                    <ul class="space-y-2 mb-6 text-gray-700">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 ml-2"></i>
+                            <span>تمامی کانال‌های معتبر</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 ml-2"></i>
+                            <span>پخش بدون قطعی</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 ml-2"></i>
+                            <span>کیفیت 4K و Full HD</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition">
+                        مشاهده طرح‌ها
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Products -->
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-md-4 mb-4">
-      <div class="product-card">
-        <h5>گوشی موبایل سامسونگ</h5>
-        <p>قیمت: ۸٬۹۰۰٬۰۰۰ تومان</p>
-        <button class="btn btn-danger">افزودن به سبد</button>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4">
-      <div class="product-card">
-        <h5>هدفون بی‌سیم</h5>
-        <p>قیمت: ۱٬۵۰۰٬۰۰۰ تومان</p>
-        <button class="btn btn-danger">افزودن به سبد</button>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4">
-      <div class="product-card">
-        <h5>تلویزیون هوشمند</h5>
-        <p>قیمت: ۲۳٬۰۰۰٬۰۰۰ تومان</p>
-        <button class="btn btn-danger">افزودن به سبد</button>
-      </div>
-    </div>
-  </div>
-</div>
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">تعرفه خدمات</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">مناسب‌ترین قیمت‌ها با بهترین کیفیت را از ما بخواهید</p>
+            </div>
+            
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex rounded-md shadow-sm">
+                    <button class="px-6 py-3 text-sm font-medium rounded-r-lg border border-gray-200 bg-indigo-600 text-white">
+                        VPN
+                    </button>
+                    <button class="px-6 py-3 text-sm font-medium border-t border-b border-gray-200 bg-white text-gray-700 hover:bg-gray-50">
+                        WireGuard
+                    </button>
+                    <button class="px-6 py-3 text-sm font-medium border-t border-b border-gray-200 bg-white text-gray-700 hover:bg-gray-50">
+                        DNS
+                    </button>
+                    <button class="px-6 py-3 text-sm font-medium rounded-l-lg border border-gray-200 bg-white text-gray-700 hover:bg-gray-50">
+                        VIP
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Basic Plan -->
+                <div class="pricing-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                    <div class="p-6 border-b border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">پایه</h3>
+                        <p class="text-gray-600 mb-4">مناسب برای استفاده شخصی و محدود</p>
+                        <div class="flex items-end mb-4">
+                            <span class="text-4xl font-bold text-gray-800">290,000</span>
+                            <span class="text-gray-600 mr-1">تومان</span>
+                            <span class="text-sm text-gray-500 mr-2">/ ماهانه</span>
+                        </div>
+                        <button class="w-full border-2 border-indigo-600 text-indigo-600 py-2 rounded-lg hover:bg-indigo-50 transition">
+                            انتخاب طرح
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 ml-2"></i>
+                                <span>سرعت تا 20 مگابیت</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 ml-2"></i>
+                                <span>3 سرور در دسترس</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 ml-2"></i>
+                                <span>پشتیبانی 24 ساعته</span>
+                            </li>
+                            <li class="flex items-center text-gray-400">
+                                <i class="fas fa-times text-red-400 ml-2"></i>
+                                <span>تغییر IP نامحدود</span>
+                            </li>
+                            <li class="flex items-center text-gray-400">
+                                <i class="fas fa-times text-red-400 ml-2"></i>
+                                <span>پورت اختصاصی</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Popular Plan -->
+                <div class="pricing-card bg-white rounded-xl shadow-lg overflow-hidden border-2 border-indigo-600 transform scale-105 relative">
+                    <div class="absolute top-0 right-0 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                        پرفروش
+                    </div>
+                    <div class="p-6 border-b border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">حرفه‌ای</h3>
+                        <p class="text-gray-600 mb-4">مناسب برای استفاده حرفه‌ای و روزمره</p>
+                        <div class="flex items-end mb-4">
+                            <span class="text-4xl font-bold text-gray-800">490,000</span>
+                            <span class="text-gray-600 mr-1">تومان</span>
+                            <span class="text-sm text-gray-500 mr-2">/ ماهانه</span>
+                        </div>
+                        <button class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">
+                            انتخاب طرح
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 ml-2"></i>
+                                <span>سرعت تا 50 مگابیت</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 ml-2"></i>
+                                <span>10 سرور در دسترس</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 ml-2"></i>
+                                <span>پشتیبانی VIP</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 ml-2"></i>
+                                <span>تغییر IP نامحدود</span>
+                            </li>
+                            <li class="flex items-center text-gray-400">
+                                <i class="fas fa-times text-red-400 ml-2"></i>
+                                <span>پورت اختصاصی</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Premium Plan -->
+                <div class="pricing-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                    <div class="p-6 border-b border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">اختصاصی</h3>
+                        <p class="text-gray-600 mb-4">مناسب برای کسب‌وکارها و نیازهای ویژه</p>
+                        <div class="flex items-end mb-4">
+                            <span class="text-4xl font-bold text-gray-800">890,000</span>
+                            <span class="text-gray-600 mr-1">تومان</span>
+                            <span class="text-sm text-gray-500 mr-2">/ ماهانه</span>
+                        </div>
+                        <button class="w-full border-2 border-indigo-600 text-indigo-600 py-2 rounded-lg hover:bg-indigo-50 transition">
+                            انتخاب طرح
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 ml-2"></i>
+                                <span>سرعت نامحدود</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 ml-2"></i>
+                                <span>تمامی سرورها فعال</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 ml-2"></i>
+                                <span>پشتیبانی اختصاصی</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 ml-2"></i>
+                                <span>تغییر IP نامحدود</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 ml-2"></i>
+                                <span>پورت اختصاصی</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Footer -->
-<footer>
-  <p>© ۲۰۲۵ دیجی‌کالا | طراحی شده توسط مرتضی</p>
-</footer>
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">چرا ما را انتخاب کنید؟</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">ویژگی‌های منحصر به فرد سرویس‌های ما</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-xl p-6 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-tachometer-alt text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">سرعت فوق‌العاده</h3>
+                    <p class="text-gray-600">با استفاده از بهترین سرورها و بهینه‌سازی‌های پیشرفته، بالاترین سرعت ممکن را تجربه کنید.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-6 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">امنیت بالا</h3>
+                    <p class="text-gray-600">با پروتکل‌های رمزنگاری پیشرفته، اطلاعات شما کاملاً محافظت می‌شود.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-6 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-server text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">سرورهای متعدد</h3>
+                    <p class="text-gray-600">دسترسی به ده‌ها سرور در کشورهای مختلف برای تجربه‌ای بدون محدودیت.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-6 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-headset text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">پشتیبانی 24/7</h3>
+                    <p class="text-gray-600">تیم پشتیبانی ما همیشه آماده پاسخگویی به سوالات و حل مشکلات شماست.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-6 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-mobile-alt text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">همه دستگاه‌ها</h3>
+                    <p class="text-gray-600">قابل استفاده در ویندوز، مک، لینوکس، اندروید و iOS با راهنمای نصب آسان.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-6 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-infinity text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">بدون قطعی</h3>
+                    <p class="text-gray-600">اتصال پایدار و بدون قطعی حتی در شلوغ‌ترین ساعت‌های روز.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Testimonials -->
+    <section class="py-16 bg-indigo-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">نظرات مشتریان</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">آنچه کاربران ما درباره سرویس‌های ما می‌گویند</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mr-4">
+                            <span class="text-indigo-600 font-bold">ع.ر</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">علی رضایی</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">بیش از 2 سال است که از سرویس VPN این شرکت استفاده می‌کنم. سرعت و پایداری عالی داره و پشتیبانی همیشه پاسخگو هستن.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mr-4">
+                            <span class="text-indigo-600 font-bold">م.ح</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">مریم حسینی</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">سرویس WireGuard واقعا عالیه! سرعتش باورنکردنیه و برخلاف VPN های دیگه، باتری موبایلم رو خالی نمی‌کنه.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mr-4">
+                            <span class="text-indigo-600 font-bold">ح.م</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">حسین محمدی</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">کانال VIP رو برای پدرم خریدم که بتونه مسابقات فوتبال رو ببینه. کیفیت تصویر عالیه و هیچ وقت قطع نشده.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">سوالات متداول</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">پاسخ به رایج‌ترین سوالات شما</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="border border-gray-200 rounded-lg overflow-hidden mb-4">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="font-medium text-gray-800">چگونه می‌توانم سرویس VPN را خریداری کنم؟</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p class="text-gray-600">پس از انتخاب طرح مورد نظر در بخش تعرفه‌ها، بر روی دکمه "خرید سرویس" کلیک کنید. سپس اطلاعات مورد نیاز را وارد کرده و پرداخت را انجام دهید. پس از پرداخت موفق، اطلاعات اتصال به همراه راهنمای نصب برای شما ارسال خواهد شد.</p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden mb-4">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="font-medium text-gray-800">تفاوت VPN و WireGuard در چیست؟</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p class="text-gray-600">WireGuard یک پروتکل جدیدتر و بهینه‌تر نسبت به VPN های معمولی است. سرعت بالاتر، مصرف باتری کمتر در موبایل‌ها و اتصال پایدارتر از مزایای WireGuard است. اما VPN های معمولی سازگاری بیشتری با دستگاه‌های قدیمی دارند.</p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden mb-4">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="font-medium text-gray-800">آیا می‌توانم در چند دستگاه از یک اشتراک استفاده کنم؟</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p class="text-gray-600">بله، شما می‌توانید همزمان در 3 دستگاه مختلف از یک اشتراک استفاده کنید. اما توجه داشته باشید که استفاده همزمان از تعداد دستگاه‌های بیشتر ممکن است باعث کاهش سرعت یا قطعی اتصال شود.</p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden mb-4">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="font-medium text-gray-800">روش‌های پرداخت شما چیست؟</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p class="text-gray-600">شما می‌توانید از طریق درگاه پرداخت اینترنتی، کارت به کارت و یا کیف پول‌های الکترونیکی پرداخت خود را انجام دهید. همچنین برای مشتریان خارج از کشور، پرداخت از طریق PayPal و ارزهای دیجیتال نیز امکان‌پذیر است.</p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden mb-4">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="font-medium text-gray-800">در صورت بروز مشکل چگونه می‌توانم با پشتیبانی تماس بگیرم؟</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p class="text-gray-600">شما می‌توانید از طریق تیکت در پنل کاربری، چت آنلاین در سایت، تلگرام و یا تماس تلفنی با پشتیبانی ما در ارتباط باشید. تیم پشتیبانی ما 24 ساعته و در 7 روز هفته آماده پاسخگویی به شماست.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">تماس با ما</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">برای دریافت مشاوره و پاسخ به سوالات خود با ما در تماس باشید</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <form class="bg-white rounded-xl shadow-md p-6">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 mb-2">نام و نام خانوادگی</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 mb-2">آدرس ایمیل</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600">
+                        </div>
+                        <div class="mb-4">
+                            <label for="subject" class="block text-gray-700 mb-2">موضوع</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 mb-2">پیام شما</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition font-bold">
+                            ارسال پیام
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-white rounded-xl shadow-md p-6 h-full">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">راه‌های ارتباطی</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">آدرس</h4>
+                                    <p class="text-gray-600">تهران، خیابان آزادی، ساختمان مرکزی</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-phone-alt text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">تلفن</h4>
+                                    <p class="text-gray-600">021-12345678</p>
+                                    <p class="text-gray-600">0912-345-6789</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-envelope text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">ایمیل</h4>
+                                    <p class="text-gray-600">info@example.com</p>
+                                    <p class="text-gray-600">support@example.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fab fa-telegram text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">تلگرام</h4>
+                                    <p class="text-gray-600">@example_support</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold text-gray-800 mb-4">ما را در شبکه‌های اجتماعی دنبال کنید</h4>
+                            <div class="flex space-x-4 space-x-reverse">
+                                <a href="#" class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 hover:bg-indigo-200 transition">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 hover:bg-indigo-200 transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 hover:bg-indigo-200 transition">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 hover:bg-indigo-200 transition">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-indigo-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">عضویت در خبرنامه</h2>
+                <p class="text-xl mb-8 text-indigo-100">برای دریافت آخرین تخفیف‌ها و اطلاعیه‌ها ایمیل خود را وارد کنید</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                    <input type="email" placeholder="آدرس ایمیل شما" class="flex-grow px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-300 text-gray-800">
+                    <button class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-bold hover:bg-indigo-50 transition whitespace-nowrap">
+                        عضویت در خبرنامه
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-4 space-x-reverse mb-6">
+                        <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">سرویس‌های حرفه‌ای</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">ارائه بهترین سرویس‌های VPN، WireGuard، DNS و کانال VIP با کیفیت و سرعت بالا</p>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-telegram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">لینک‌های مفید</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">راهنمای نصب VPN</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">راهنمای نصب WireGuard</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">تنظیمات DNS</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">لیست کانال‌های VIP</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">پرسش‌های متداول</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">خدمات</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">خرید VPN اختصاصی</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">خرید WireGuard</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">خرید DNS اختصاصی</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">خرید اشتراک کانال VIP</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">سرور اختصاصی</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">تماس با ما</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-gray-400 ml-2"></i>
+                            <span class="text-gray-400">تهران، خیابان آزادی</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-gray-400 ml-2"></i>
+                            <span class="text-gray-400">021-12345678</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gray-400 ml-2"></i>
+                            <span class="text-gray-400">info@example.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-telegram text-gray-400 ml-2"></i>
+                            <span class="text-gray-400">@example_support</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 تمامی حقوق برای سرویس‌های حرفه‌ای محفوظ است.</p>
+                <div class="flex space-x-6 space-x-reverse">
+                    <a href="#" class="text-gray-400 hover:text-white transition">قوانین و مقررات</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">حریم خصوصی</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">درباره ما</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+        
+        // Service Tabs
+        const tabButtons = document.querySelectorAll('#pricing button');
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('bg-indigo-600', 'text-white');
+                    btn.classList.add('bg-white', 'text-gray-700');
+                });
+                
+                button.classList.remove('bg-white', 'text-gray-700');
+                button.classList.add('bg-indigo-600', 'text-white');
+            });
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.querySelector('header button:last-child');
+        mobileMenuButton.addEventListener('click', () => {
+            const nav = document.querySelector('header nav');
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('flex');
+            nav.classList.toggle('flex-col');
+            nav.classList.toggle('absolute');
+            nav.classList.toggle('top-20');
+            nav.classList.toggle('right-4');
+            nav.classList.toggle('bg-white');
+            nav.classList.toggle('p-4');
+            nav.classList.toggle('rounded-lg');
+            nav.classList.toggle('shadow-lg');
+        });
+    </script>
 </body>
 </html>
